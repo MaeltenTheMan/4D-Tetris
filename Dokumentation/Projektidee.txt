@@ -1,0 +1,2 @@
+Projekttitel "4D Tetris"
+Das Programm lässt in der Mitte des Spielfeldes Spielsteine erscheinen. Diese bestehen jeweils aus vier Blöcken. Sie bewegen sich in eine von vier Richtungen. Der Spieler kann die Steine auf dem Weg zum Spielfeldrand bewegen und drehen. Wenn eine Reihe mit Blöcken ausgefüllt ist, wird diese vom Programm gelöscht. Die Geschwindigkeit in der sich die Spielsteine bewegen erhöht sich mit der Zeit. Das Spiel ist verloren, wenn Sich Blöcke unterschiedlicher Spielfeldränder berühren. Die Anzahl an gelöschten Reihen wird im Programm gespeichert. 
