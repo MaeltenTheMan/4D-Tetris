@@ -93,3 +93,34 @@ Es ist dabei sehr wahrscheinlich, dass Sie (vielleicht auch erst später während 
 
 Viele Grüße,
 Markus Alpers
+
+===================================
+=== Feedback Alpers, 2016-05-04 ===
+===================================
+
+Leider ist da noch keine vollwertige Interaktion enthalten: Momentan reagiert der Spieler nur auf Vorgaben des Programms. Was Sie konzipieren sollen ist dagegen eine Anwendung, die die folgenden beiden Punkte beinhaltet:
+
+(1) Interaktion zwischen NutzerInnen und Programm. Lesen Sie dazu meine Ausführung unter http://www.elearning.haw-hamburg.de/mod/book/view.php?id=607850&chapterid=1846
+
+(2) Webbasiert: Momentan ist es für das Spiel vollkommen irrelevant, ob der Rechner vernetzt ist oder nicht. Es soll aber ein zentrales Element sein, dass das Programm vernetzt (aka webbasiert) ist. Die einfachste Möglichkeit dafür besteht darin, dass mehrere Spieler gleichzeitig in einer Spielwelt unterwegs sind. Ein gutes Konzept wäre in dieser Hinsicht eines, bei dem Spieler genauso miteinander wie mit dem Programm interagieren (siehe 1).
+
+Nochmal ein Hinweis: Ein Kritikpunkt vom letzten Mal ist noch nicht geklärt: Eine Außenwand ist eine Grenze des Spielfelds. Da diese Wände im rechten Winkel zueinander stehen, ist es möglich, dass ein Stein zwei Außenwände berührt und in dem Moment ist die Bedingung erfüllt, dass das Spiel beendet ist, sobald ein Stein, der eine Wand berührt einen anderen Stein berührt, der eine andere Außenwand berührt. Das es sich um den selben Stein handelt schließt Ihre Beschreibung nicht aus.
+
+Leider haben Sie auch nicht klargestellt, was mit bewegen gemeint ist: Eine Drehung ist eine Bewegung, also werden Sie noch mehr als drehen meinen. Aber was meinen Sie?
+
+Auch die Beschreibung "Wenn eine Reihe mit Blöcken ausgefüllt ist, wird diese vom Programm gelöscht," beinhaltet wahrscheinlich eine Bedeutung, die Sie nicht meinen. Und umgekehrt ist sie wahrscheinlich nicht vollständig. Für das klassische Tetris wäre das nicht der Fall.
+
+Mir geht es mit diesen Punkten nicht darum, Sie zu ärgern, aber wenn Sie dieses Projekt in einem Team bearbeiten würden, dann würde die aktuelle Beschreibung zu mehreren Fehlern führen. Das liegt nicht zuletzt daran, dass bereits das Grundkonzept ein großes Potenzial bietet, insbesondere Logikfehler in den Spielablauf einzubauen.
+
+Wertung 2: Projektbeschreibung: gesamt: 4 / 10
+- Pro Interaktionsmöglichkeit: 1
+- Knappe aber klare Beschreibung: 3
+- Werbeslogans u.ä.: 0 
+- Designaspekte: 0 
+- Voraussetzung bekannten Wissens: 0 
+
+Bitte erweitern Sie jetzt Ihre Projektidee so, dass Interaktivität und Webbasierung wie beschrieben integriert werden.
+
+=====================
+=== Feedback Ende ===
+=====================
