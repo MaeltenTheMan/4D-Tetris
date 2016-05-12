@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 MaxKretzschmar stand 26.4.16
+=======
+maxkretzschmar
+>>>>>>> 9fa08795901280fad690d8aa39dab37a5d79db21

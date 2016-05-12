@@ -1,4 +1,4 @@
-=== Projektidee MaeltenTheMan, 2016-04-05 ===
+=== Projektidee MaeltenTheMan & norkn, 2016-04-05 ===
 
 Projekttitel "4D Tetris"
 Das Programm lässt in der Mitte des kreuzförmigen Spielfeldes Spielsteine erscheinen. 
@@ -93,3 +93,82 @@ Es ist dabei sehr wahrscheinlich, dass Sie (vielleicht auch erst später während 
 
 Viele Grüße,
 Markus Alpers
+
+===================================
+=== Feedback Alpers, 2016-05-04 ===
+===================================
+
+Leider ist da noch keine vollwertige Interaktion enthalten: Momentan reagiert der Spieler nur auf Vorgaben des Programms. Was Sie konzipieren sollen ist dagegen eine Anwendung, die die folgenden beiden Punkte beinhaltet:
+
+(1) Interaktion zwischen NutzerInnen und Programm. Lesen Sie dazu meine Ausführung unter http://www.elearning.haw-hamburg.de/mod/book/view.php?id=607850&chapterid=1846
+
+(2) Webbasiert: Momentan ist es für das Spiel vollkommen irrelevant, ob der Rechner vernetzt ist oder nicht. Es soll aber ein zentrales Element sein, dass das Programm vernetzt (aka webbasiert) ist. Die einfachste Möglichkeit dafür besteht darin, dass mehrere Spieler gleichzeitig in einer Spielwelt unterwegs sind. Ein gutes Konzept wäre in dieser Hinsicht eines, bei dem Spieler genauso miteinander wie mit dem Programm interagieren (siehe 1).
+
+Nochmal ein Hinweis: Ein Kritikpunkt vom letzten Mal ist noch nicht geklärt: Eine Außenwand ist eine Grenze des Spielfelds. Da diese Wände im rechten Winkel zueinander stehen, ist es möglich, dass ein Stein zwei Außenwände berührt und in dem Moment ist die Bedingung erfüllt, dass das Spiel beendet ist, sobald ein Stein, der eine Wand berührt einen anderen Stein berührt, der eine andere Außenwand berührt. Das es sich um den selben Stein handelt schließt Ihre Beschreibung nicht aus.
+
+Leider haben Sie auch nicht klargestellt, was mit bewegen gemeint ist: Eine Drehung ist eine Bewegung, also werden Sie noch mehr als drehen meinen. Aber was meinen Sie?
+
+Auch die Beschreibung "Wenn eine Reihe mit Blöcken ausgefüllt ist, wird diese vom Programm gelöscht," beinhaltet wahrscheinlich eine Bedeutung, die Sie nicht meinen. Und umgekehrt ist sie wahrscheinlich nicht vollständig. Für das klassische Tetris wäre das nicht der Fall.
+
+Mir geht es mit diesen Punkten nicht darum, Sie zu ärgern, aber wenn Sie dieses Projekt in einem Team bearbeiten würden, dann würde die aktuelle Beschreibung zu mehreren Fehlern führen. Das liegt nicht zuletzt daran, dass bereits das Grundkonzept ein großes Potenzial bietet, insbesondere Logikfehler in den Spielablauf einzubauen.
+
+Wertung 2: Projektbeschreibung: gesamt: 4 / 10
+- Pro Interaktionsmöglichkeit: 1
+- Knappe aber klare Beschreibung: 3
+- Werbeslogans u.ä.: 0 
+- Designaspekte: 0 
+- Voraussetzung bekannten Wissens: 0 
+
+Bitte erweitern Sie jetzt Ihre Projektidee so, dass Interaktivität und Webbasierung wie beschrieben integriert werden.
+
+=====================
+=== Feedback Ende ===
+=====================
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+=== Projektidee Erweiterung 12.05.16===
+
+MaeltenTheMan & norkn
+
+
+Interaktion zwischen NuterInnen und Programm:
+Einzelspieler --> 	Der Spieler versucht möglichst viele Reihen zu löschen. Hierzu ordnet er die , vom Programm, zufällig zur Verfügung gestellten Spielsteine an.
+			Interaktion vom Spieler: Verschiebung des aktuellen Spielsteines nach links und rechts und Drehungen in 90 grad Schritten.
+			Interaktion vom Rechner: Zufällige Auswahl des nächsten Spielsteines. Zufällige Drehung des Spielfeldes. Anzeige des aktuellen Scores.
+
+Webbasierte Aspekte des Spieles:
+Einzelspieler -- > 	Anzeige des Top 10 Highscores
+Mehrspieler --> 	Das Spiel zu zweit. Einteilung in zwei Rollen, der Spieler und die Welt. 
+			Die Rolle "Spieler":	Gleiche interaktionsmöglichkeiten wie im Einzelspiel.
+			Die Rolle "Welt":	Der Spieler steuert die Drehung des Spielfeldes nach jedem gelandeten Spielstein. 
+						Zusätzlich kontrolliert er welcher Spielstein als nächstes erscheinen soll. Sollte der Weltspieler nicht rechtzeitig eine Auswahl getroffen haben, wird eine zufällige Drehung vollzogen und/oder ein zufälliger Spielstein ausgewählt.
+						Zwei Spielmodi denkbar (Spieler und Welt im Team; Spieler und Welt gegeneinander)
+
+Problem der Berührung zweier Spielfeldränder:
+Lösung: Spielfeld ist kreuzförmig. --> Es existieren vier rechteckige Spielfeldränder, die jeweils an einer Kante eines Quadrates (Spielfeld-Mitte) anliegen. Der Spieler hat verloren, sobald ein abgelegter Spielstein in die Spielfeld-Mitte ragt.
+
+
+Zur Bewertung:
+- Werbeslogans u.ä.: 0 
+- Designaspekte: 0 
+- Voraussetzung bekannten Wissens: 0 
+Wir wissen nicht genau, was wir hätten besser machen können s.u..
+Werbeslogans: Was hätten wir für Werbeslogans einfügen sollen? Sollen wir uns Werbeslogans für 4D-Tetris (unser Spiel) ausdenken oder soll auf der Seite Platz für externe Werbung sein?
+Designaspekte: Bedeutet es, dass unser Spiel designtechnisch nicht ausreicht oder ausreichend ausgereift ist? Oder hätten wir doch Designaspekte in die Projektidee schreiben sollen? 
+Vorraussetzung bekannten Wissens: Was bedeutet das? Wir dachten es sollen nur strukturelle Elemente ohne Vorwissen sein?
+
+Vielen Dank für Ihr langes Feedback,
+
+beste Grüße
+
+Malte Gruntzdorff und Felix Malsch
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
