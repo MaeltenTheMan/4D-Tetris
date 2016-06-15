@@ -202,3 +202,19 @@ $_SESSION['field'] = $field;
 
 ?>
 <!-- TODO: split into more files, is session started each time? -->
+
+<!--
+====================================
+=== Feedback Alpers, 2016-06-015 ===
+====================================
+
+Bitte beachten Sie, dass bei den Projekten in diesem Semester kein JavaScript zugelassen ist.
+
+Außerdem wirkt es so, als wenn Sie mit PHP strukturelle Elemente erzeugen. Das soll aber in HTML passieren. Einzige Ausnahme sind Fälle wie beispielsweise Tabellen, in denen Sie anhand einer verschachtelten Schleife die Zellen der Tabelle leicht generieren können. Aber auch in diesem Fällen sollen HTML-Container (z.B. <td>) ins HTML-Dokument eingefügt werden.
+
+PHP soll dagegen nur dafür verwendet werden, um (neben der eigentlichen Funktionalität des Programms) die strukturellen Elemente zu ändern.
+
+Der Sinn besteht darin, dass Sie zeigen, dass Sie im Stande sind, mit den einfachen Mitteln, die wir in der Veranstaltung besprochen haben ein Programm umzusetzen. Denn später werden Sie immer wieder in Situationen kommen, in denen ein Framework Ihnen nicht das bietet, was Sie haben wollen. Und dann müssen Sie eine eigene Lösung für Ihr Problem entwickeln.
+
+Außerdem sollen Sie klar zwischen strukturellen Elemente und dynamischer Änderung dieser Elemente im Code unterscheiden. Hier geht es um die Fähigkeit, systematisch zwischen unterschiedlichen Aufgabenbereichen zu unterscheiden.
+-->

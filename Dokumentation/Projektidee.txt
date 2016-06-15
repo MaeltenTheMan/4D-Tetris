@@ -1,137 +1,6 @@
-=== Projektidee MaeltenTheMan & norkn, 2016-04-05 ===
-
-Projekttitel "4D Tetris"
-Das Programm lässt in der Mitte des kreuzförmigen Spielfeldes Spielsteine erscheinen. 
-Diese bestehen jeweils aus vier Blöcken. 
-Sie bewegen sich in eine von vier Richtungen. 
-Der Spieler kann die Steine auf dem Weg zum Spielfeldrand(hiermit sind ausschließlich die äußersten Kanten des Spielfeldkreuzes gemeint) bewegen und drehen. 
-Wenn eine Reihe mit Blöcken ausgefüllt ist, wird diese vom Programm gelöscht. 
-Die Geschwindigkeit in der sich die Spielsteine bewegen erhöht sich mit der Zeit. 
-Das Spiel ist verloren, wenn sich Blöcke aus unterschiedlichen Spielfeldrändern(im Sinne wie oben erläutert) berühren.
-Die Anzahl an gelöschten Reihen wird im Programm als Highscore gespeichert.
-
-=== Feedback Alpers, 2016-04-12 ===
-
-Ihre Beschreibung der Projektidee trifft es leider noch nicht ganz. Ihre Aufgabe bestand darin, zu beschreiben, wie die Interaktion ablaufen soll. Was Sie dagegen beschrieben haben, ist in allgemeiner Form, dass SpielerInnen Steine bewegen können. (Hier fehlen also Details. Damit ist aber nicht gemeint, mit welchen Tasten die Interaktionen ausgelöst werden sollen.)
-
-Eine Aussage ist unklar formuliert: Sie sprechen dort von Blöcken unterschiedlicher Spielfeldränder, die sich nicht berühren dürfen. Wenn das gilt, dann darf z.B. ein Stein entweder nicht an einer Ecke liegen, weil er damit unterschiedliche Spielfeldränder berührt und somit ein Stein eines Randes einen Stein eines anderen Randes (eben sich selbst) berührt oder es ist unmöglich, eine Reihe abzuschließen, wenn dort ein Stein nicht die Ecke ausfüllt.
-
-Die Projektidee selbst ist dagegen gut, weil es sich um eine interaktive Anwendung handelt, die gerade nicht eine 1:1-Kopie des Klassikers Tetris ist. Es wird zwar noch nicht ganz deutlich, wie das ganze sich im Detail unterscheidet, aber das war ja auch nicht gefordert.
-
-=== Zweiter Aufgabenblock (identisch für alle Studierenden) ===
-
-Sie haben jetzt gezeigt, dass Sie einfache Arbeiten mit einem Git-Repository beherrschen.
-Als Teil der letzten Aufgabe sollten Sie beschreiben, was Ihre Anwendung tun soll, also was für Funktionalitäten Ihre Anwendung bieten soll.
-Wenn Sie hier nichts angegeben haben, dann werde ich Ihnen einen Vorschlag hochladen, mit dem Sie weiterarbeiten können.
-In der Veranstaltung haben Sie außerdem gelernt, was Markup Languages sind.
-
-Die nächste Aufgabe besteht aus den folgenden Teilen:
-
-1.) Lesen Sie mein Feedback durch und setzen Sie die beschriebenen Aufgaben um.
-
-Für die folgende Aufgabe sollten Sie mindestens eine halbe Stunde investieren. Zwei Stunden wäre aber etwas zu viel des guten.
-Bearbeiten Sie die Aufgaben 2. und 3. bitte innerhalb von 48 Stunden, weil andere Studierende davon abhängen, dass Sie sie beendet haben.
-Bearbeiten Sie die Aufgaben auf jeden Fall in der vorgegebenen Reihenfolge.
-Und bearbeiten Sie eine Aufgabe nicht nachträglich nochmal. (Wenn Sie also z.B. Aufgabe 3. bearbeiten, dann ändern Sie bitte nichts an Aufgabe 1. nachträglich ab. Dafür wird später noch genug Zeit sein.)
-
-2.) Bennen Sie die strukturellen Elemente, aus denen Ihre Anwendung bestehen soll.
-Es ist dabei egal, ob es diese Elemente in HTML gibt.
-Es ist auch egal, ob Sie sich schon in HTML eingearbeitet haben.
-Wichtig ist nur, dass Sie die strukturellen Elemente benennen, aus der die Anwendung bestehen soll.
-Speichern Sie diese Aufstellung als HTML-Kommentar in einer Datei mit dem Namen
-
-strukt.html
-
-, die Sie in Ihrem Repository abspeichern. Wichtig: Die Datei soll nicht im Unterverzeichnis Dokumentation des Repositories gespeichert werden, weil sie die Basis für das erste HTML-Dokument werden wird.
-
-Wenn Sie noch unsicher sind: Strukturelle Elemente können alles mögliche sein:
-- Tabellen
-- Listen
-- Schaltflächen
-- Textfelder
-- Bildbereiche
-- Hintergrundmusik
-- Absätze
-- ...
-
-In anderen Worten: Ein strukturelles Element ist etwas, das ein abgegrenzter Teil der Anwendung ist.
-Notieren Sie kurz, welche Funktion jedes der von Ihnen genannten Elemente haben soll.
-
-Hier einige Beispiele:
-- Schaltfläche (Nutzer können per Klick bestätigen, dass eine Eingabe abgeschickt werden soll.)
-- Textfeld für Namen (Nutzer können Ihren Nachnamen eintragen.)
-- Log-In-Maske (Bereich, in dem Nutzer sich einloggen können.)
-- - Teile der Log-In-Maske:
-- - Textfeld für Username
-- - Textfeld, das die Eingabe nicht anzeigt, fürs Passwort
-- Tabelle, 7 x 5 Felder (Jedes Feld soll ein Bild anzeigen, das ein Feld des Spielbretts ist. Wenn Nutzer ein Feld anwählen, soll ein Menü erscheinen.)
-- - Menü für jedes Feld der Tabelle mit Texteinträgen (Eintrag für "Gebäude abreißen", "Feld kaufen")
-- Hintergrundbild (Hier sollen einzelne Bilder als Diashow eingeblendet werden.)
-- Werbebanner
-- Schaltfläche für die Maskierung von NSFW (NSFW = Not safe for work)(NutzerInnen können über diese Schaltfläche eine andere Anwendung in der Vordergrund einblenden lassen, damit der Chef nicht sieht, dass sie gerade spielen.)
-
-3.) Schauen Sie jetzt in der Liste der Repositories (nicht in der Tabelle der Accounts) nach, welche zehn Repositories vor und nach Ihrem Repository aufgeführt sind und geben Sie den Besitzern dieser Repositories Zugriffsrechte auf Ihr Repository.
-
-Bsp.: Sie haben das Repository BerndStromberg. Dann folgen die zehn Repositories der Nutzer BlackWolf63, Cantinaband, CaptainWeasle, ColePfeiffer, CurvLietzau,
-DangerDulf, dnbdel, Domsche, Eldinox und Eupuco und vor Ihnen gibt es die fünf Repositories der Nutzer 2238867, amelie-beh, Anger21, anita1997 und Asphalon. all diesen Accounts geben Sie jetzt Zugriffsrechte auf Ihr Repository, so wie Sie das schon für mich getan haben. Wenn Sie, wie BerndStrommberg zu weit am Anfang der Liste stehen (hier gibt es ja nur fünf andere Accounts bis zum Anfang der Liste), dann geben Sie zusätzlich noch den Besitzern der letzten fünf Repositories Zugriffsrechte. Es sollten insgesamt 20 Accounts Zugriffsrecht haben.
-
-Für die nächsten zwei Aufgaben sollten Sie pro Repository zwischen zehn Minuten und einer Stunde aufwenden. Weniger ist zu wenig und mehr ist zu viel.
-Beachten Sie dabei bitte, dass Sie hier letzten Endes Kritik an der Arbeit eines/einer anderen üben und das einige von Ihnen noch nie programmiert haben. Arbeiten Sie deshalb bitte daran, alles, was Sie ergänzen so neutral und höflich wie möglich zu formulieren, denn Unwissenheit und mangelndes Verständnis fürs Programmieren sind eben nicht das selbe wie Dummheit oder Faulheit.
-
-Bitte erledigen Sie diese Aufgaben innerhalb der nächsten sieben Tage.
-
-4.) Als nächstes greifen Sie auf die nach Ihrem Repository nachfolgenden fünf Repositories zu und bearbeiten hier die folgende Aufgabe. (Hier hängen Sie also davon ab, dass andere Kommilitonen Aufgabe 3. erledigt haben.) 
-
-Lesen Sie sich die Projektidee durch und machen Sie sich ähnlich wie bei 2. einfache Stichpunkte über strukturelle Elemente, die Sie bei dieser Projektidee sinnvoll finden. (Hier erstmal nur Stichpunkte, Details arbeiten Sie unter 5. aus.)
-
-5.) Öffnen Sie jetzt die Datei strukt.html des Repositories, das Sie gerade bearbeiten. Ergänzen Sie Elemente, die Sie unter 4. notiert haben und die noch nicht eingetragen sind in der unter 2. beschriebenen Form.
-
-Abschließender Hinweis zu 4. und 5.:
-
-Auch wenn das nirgends explizit steht sollen Sie Änderungen in das Repository pushen, aus dem sie die Datei strukt.html gepullt haben.
-Es ist dabei sehr wahrscheinlich, dass Sie (vielleicht auch erst später während der Projektbearbeitung) einen merge durchführen müssen. Wenn Sie sich noch nicht angesehen haben, wie das geht, dann tun Sie es jetzt.
-
-Viele Grüße,
-Markus Alpers
-
-===================================
-=== Feedback Alpers, 2016-05-04 ===
-===================================
-
-Leider ist da noch keine vollwertige Interaktion enthalten: Momentan reagiert der Spieler nur auf Vorgaben des Programms. Was Sie konzipieren sollen ist dagegen eine Anwendung, die die folgenden beiden Punkte beinhaltet:
-
-(1) Interaktion zwischen NutzerInnen und Programm. Lesen Sie dazu meine Ausführung unter http://www.elearning.haw-hamburg.de/mod/book/view.php?id=607850&chapterid=1846
-
-(2) Webbasiert: Momentan ist es für das Spiel vollkommen irrelevant, ob der Rechner vernetzt ist oder nicht. Es soll aber ein zentrales Element sein, dass das Programm vernetzt (aka webbasiert) ist. Die einfachste Möglichkeit dafür besteht darin, dass mehrere Spieler gleichzeitig in einer Spielwelt unterwegs sind. Ein gutes Konzept wäre in dieser Hinsicht eines, bei dem Spieler genauso miteinander wie mit dem Programm interagieren (siehe 1).
-
-Nochmal ein Hinweis: Ein Kritikpunkt vom letzten Mal ist noch nicht geklärt: Eine Außenwand ist eine Grenze des Spielfelds. Da diese Wände im rechten Winkel zueinander stehen, ist es möglich, dass ein Stein zwei Außenwände berührt und in dem Moment ist die Bedingung erfüllt, dass das Spiel beendet ist, sobald ein Stein, der eine Wand berührt einen anderen Stein berührt, der eine andere Außenwand berührt. Das es sich um den selben Stein handelt schließt Ihre Beschreibung nicht aus.
-
-Leider haben Sie auch nicht klargestellt, was mit bewegen gemeint ist: Eine Drehung ist eine Bewegung, also werden Sie noch mehr als drehen meinen. Aber was meinen Sie?
-
-Auch die Beschreibung "Wenn eine Reihe mit Blöcken ausgefüllt ist, wird diese vom Programm gelöscht," beinhaltet wahrscheinlich eine Bedeutung, die Sie nicht meinen. Und umgekehrt ist sie wahrscheinlich nicht vollständig. Für das klassische Tetris wäre das nicht der Fall.
-
-Mir geht es mit diesen Punkten nicht darum, Sie zu ärgern, aber wenn Sie dieses Projekt in einem Team bearbeiten würden, dann würde die aktuelle Beschreibung zu mehreren Fehlern führen. Das liegt nicht zuletzt daran, dass bereits das Grundkonzept ein großes Potenzial bietet, insbesondere Logikfehler in den Spielablauf einzubauen.
-
-Wertung 2: Projektbeschreibung: gesamt: 4 / 10
-- Pro Interaktionsmöglichkeit: 1
-- Knappe aber klare Beschreibung: 3
-- Werbeslogans u.ä.: 0 
-- Designaspekte: 0 
-- Voraussetzung bekannten Wissens: 0 
-
-Bitte erweitern Sie jetzt Ihre Projektidee so, dass Interaktivität und Webbasierung wie beschrieben integriert werden.
-
-=====================
-=== Feedback Ende ===
-=====================
-
-
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-
-=== Projektidee Erweiterung 12.05.16===
+========================================
+=== Projektidee Erweiterung 12.05.16 ===
+========================================
 
 MaeltenTheMan & norkn
 
@@ -168,7 +37,81 @@ beste Grüße
 
 Malte Gruntzdorff und Felix Malsch
 
+=====================================================
+=== Projektidee MaeltenTheMan & norkn, 2016-04-05 ===
+=====================================================
 
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Projekttitel "4D Tetris"
+Das Programm lässt in der Mitte des kreuzförmigen Spielfeldes Spielsteine erscheinen. 
+Diese bestehen jeweils aus vier Blöcken. 
+Sie bewegen sich in eine von vier Richtungen. 
+Der Spieler kann die Steine auf dem Weg zum Spielfeldrand(hiermit sind ausschließlich die äußersten Kanten des Spielfeldkreuzes gemeint) bewegen und drehen. 
+Wenn eine Reihe mit Blöcken ausgefüllt ist, wird diese vom Programm gelöscht. 
+Die Geschwindigkeit in der sich die Spielsteine bewegen erhöht sich mit der Zeit. 
+Das Spiel ist verloren, wenn sich Blöcke aus unterschiedlichen Spielfeldrändern(im Sinne wie oben erläutert) berühren.
+Die Anzahl an gelöschten Reihen wird im Programm als Highscore gespeichert.
+
+===================================
+=== Feedback Alpers, 2016-04-12 ===
+===================================
+
+Ihre Beschreibung der Projektidee trifft es leider noch nicht ganz. Ihre Aufgabe bestand darin, zu beschreiben, wie die Interaktion ablaufen soll. Was Sie dagegen beschrieben haben, ist in allgemeiner Form, dass SpielerInnen Steine bewegen können. (Hier fehlen also Details. Damit ist aber nicht gemeint, mit welchen Tasten die Interaktionen ausgelöst werden sollen.)
+
+Eine Aussage ist unklar formuliert: Sie sprechen dort von Blöcken unterschiedlicher Spielfeldränder, die sich nicht berühren dürfen. Wenn das gilt, dann darf z.B. ein Stein entweder nicht an einer Ecke liegen, weil er damit unterschiedliche Spielfeldränder berührt und somit ein Stein eines Randes einen Stein eines anderen Randes (eben sich selbst) berührt oder es ist unmöglich, eine Reihe abzuschließen, wenn dort ein Stein nicht die Ecke ausfüllt.
+
+Die Projektidee selbst ist dagegen gut, weil es sich um eine interaktive Anwendung handelt, die gerade nicht eine 1:1-Kopie des Klassikers Tetris ist. Es wird zwar noch nicht ganz deutlich, wie das ganze sich im Detail unterscheidet, aber das war ja auch nicht gefordert.
+
+===============================================================
+=== Zweiter Aufgabenblock (identisch für alle Studierenden) ===
+===============================================================
+(gelöscht, da im Lernraum für alle einsehbar)
+
+===================================
+=== Feedback Alpers, 2016-05-04 ===
+===================================
+
+Leider ist da noch keine vollwertige Interaktion enthalten: Momentan reagiert der Spieler nur auf Vorgaben des Programms. Was Sie konzipieren sollen ist dagegen eine Anwendung, die die folgenden beiden Punkte beinhaltet:
+
+(1) Interaktion zwischen NutzerInnen und Programm. Lesen Sie dazu meine Ausführung unter http://www.elearning.haw-hamburg.de/mod/book/view.php?id=607850&chapterid=1846
+
+(2) Webbasiert: Momentan ist es für das Spiel vollkommen irrelevant, ob der Rechner vernetzt ist oder nicht. Es soll aber ein zentrales Element sein, dass das Programm vernetzt (aka webbasiert) ist. Die einfachste Möglichkeit dafür besteht darin, dass mehrere Spieler gleichzeitig in einer Spielwelt unterwegs sind. Ein gutes Konzept wäre in dieser Hinsicht eines, bei dem Spieler genauso miteinander wie mit dem Programm interagieren (siehe 1).
+
+Nochmal ein Hinweis: Ein Kritikpunkt vom letzten Mal ist noch nicht geklärt: Eine Außenwand ist eine Grenze des Spielfelds. Da diese Wände im rechten Winkel zueinander stehen, ist es möglich, dass ein Stein zwei Außenwände berührt und in dem Moment ist die Bedingung erfüllt, dass das Spiel beendet ist, sobald ein Stein, der eine Wand berührt einen anderen Stein berührt, der eine andere Außenwand berührt. Das es sich um den selben Stein handelt schließt Ihre Beschreibung nicht aus.
+
+Leider haben Sie auch nicht klargestellt, was mit bewegen gemeint ist: Eine Drehung ist eine Bewegung, also werden Sie noch mehr als drehen meinen. Aber was meinen Sie?
+
+Auch die Beschreibung "Wenn eine Reihe mit Blöcken ausgefüllt ist, wird diese vom Programm gelöscht," beinhaltet wahrscheinlich eine Bedeutung, die Sie nicht meinen. Und umgekehrt ist sie wahrscheinlich nicht vollständig. Für das klassische Tetris wäre das nicht der Fall.
+
+Mir geht es mit diesen Punkten nicht darum, Sie zu ärgern, aber wenn Sie dieses Projekt in einem Team bearbeiten würden, dann würde die aktuelle Beschreibung zu mehreren Fehlern führen. Das liegt nicht zuletzt daran, dass bereits das Grundkonzept ein großes Potenzial bietet, insbesondere Logikfehler in den Spielablauf einzubauen.
+
+Wertung 2: Projektbeschreibung: gesamt: 4 / 10
+- Pro Interaktionsmöglichkeit: 1
+- Knappe aber klare Beschreibung: 3
+- Werbeslogans u.ä.: 0 
+- Designaspekte: 0 
+- Voraussetzung bekannten Wissens: 0 
+
+Bitte erweitern Sie jetzt Ihre Projektidee so, dass Interaktivität und Webbasierung wie beschrieben integriert werden.
+
+===================================
+=== Feedback Alpers, 2016-06-15 ===
+===================================
+
+Bevor ich ein konkretes Feedback schreibe, zunächst folgende Erinnerung: Dies ist das Repository, das von MaeltenTheMan angemeldet wurde. Norkn hat ein eigenes Repository. Und seine Wertung bezüglich des Projekts wird vom Inhalt seines Repositories abhängen. Wenn er sein Repository löscht, dann ist keine Leistung erbracht und das Projekt nicht bestanden. Diese Regelung galt von Beginn des Semesters an und sie wurde oft genug kommuniziert. Wenn er sie dennoch ignoriert, dann ist das sein Problem. Siehe anfängliche Aufgabenbeschreibung in Kap. 5 und Nachricht http://www.elearning.haw-hamburg.de/mod/forum/discuss.php?d=114774
+
+Nun zum Feedback:
+
+(1) Hier ein weiterer Absatz dazu, wofür der Begriff Interaktivität in diesem Projekt steht, weil der Begriff nicht eindeutig ist: Die Schaltflächen, die NutzerInnen verwenden können sind nur die bedienbaren Elemente eines Computerprogramms. Interaktion ist wesentlich mehr als das. Denken Sie beispielsweise daran, wie eine Pokerrunde gespielt wird. Dabei spielt es nämlich eine Rolle, welche Karten abgeworfen wurden. Die Spieler (und bei einem Computerprogramm der Computer) analysieren kontinuierlich das Verhalten der anderen Spieler und ändern Ihren Spielstil in Abhängigkeit davon. Und genau das müssen Sie auch als Teil Ihres Projekts ausarbeiten und in die Projektbeschreibung integrieren.
+
+Und leider fehlt in Ihrer Beschreibung eine solche Art von Interaktion.
+
+(2) Das, was Sie oben als webbasiert beschreiben lässt sich genauso auch ohne Webbasierung umsetzen, da es machbar wäre, wenn zwei Spieler an einem Rechner sitzen. Versuchen Sie das nochmal zu überarbeiten und vor allem: Entwickeln Sie eine Konzeption, bei der auch mehr als zwei Spieler gemeinsam spielen können. (Wobei Sie bei den strukturellen Elementen etwas vorgeben, durch das eine webbasierte 2-Spieler-Partie klar erkennbar ist.)
+
+(3) Leider beschreiben Sie die Kollisionsbedingung erneut nicht eindeutig:
+"Problem der Berührung zweier Spielfeldränder:
+Lösung: Spielfeld ist kreuzförmig. --> Es existieren vier rechteckige Spielfeldränder, die jeweils an einer Kante eines Quadrates (Spielfeld-Mitte) anliegen. Der Spieler hat verloren, sobald ein abgelegter Spielstein in die Spielfeld-Mitte ragt."
+Mit dieser Definition haben Sie die Bedingung nicht in programmierbarer Form definiert, die der Rechner prüfen muss, um ein Game Over zu bestimmen.
+
+Die Wertung bleibt deshalb vorerst unverändert.
+
+(4) Wegen der Wertung: Am 10. Mai hatte ich die Wertungsskalen verschickt. Die Bereiche, auf die Sie ansprechen können zur Abwertung führen. Eine Wertung von 0 Punkten für Marketingslogans ist also das beste Ergebnis. Hier finden Sie die Nachricht: http://www.elearning.haw-hamburg.de/mod/forum/discuss.php?d=115993
