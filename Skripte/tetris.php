@@ -1,8 +1,8 @@
 <script>
-/*function rel(){
+function rel(){
 	window.location = "http://localhost/test/tetris.php";
 }
-setInterval(rel, 1000);*/
+setInterval(rel, 1000);
 
 function sendInput(e){
 	window.location = "http://localhost/test/tetris.php"+"?in="+e.keyCode;
@@ -19,22 +19,23 @@ define("elemSize",30);
 define("width", 10);
 define("height", 20);
 
+//das bild
+$im = imageCreate((width+1)*elemSize,(height+1)*elemSize);
 //the blocks
-define("I", array(array(0,-1),array(0,1),array(0,2)));
-define("L", array(array(0,-1),array(0,1),array(1,1)));
-define("iL", array(array(0,-1),array(0,1),array(-1,1)));
-define("S", array(array(1,0),array(0,1),array(-1,1)));
-define("Z", array(array(-1,0),array(0,1),array(1,1)));
-define("Q", array(array(1,0),array(0,1),array(1,1)));
-define("T", array(array(0,-1),array(-1,0),array(1,0)));
- 
-define("BLOCKS", array(I, L, iL, S, Z, Q, T));
+$I = array(array(0,-1),array(0,1),array(0,2), imagecolorallocate($im, 10, 100, 250));
+$L = array(array(0,-1),array(0,1),array(1,1), imagecolorallocate($im, 100, 10, 250));
+$iL = array(array(0,-1),array(0,1),array(-1,1), imagecolorallocate($im, 100, 100, 20));
+$S = array(array(1,0),array(0,1),array(-1,1), imagecolorallocate($im, 1, 100, 2));
+$Z = array(array(-1,0),array(0,1),array(1,1), imagecolorallocate($im, 100, 10, 50));
+$Q = array(array(1,0),array(0,1),array(1,1), imagecolorallocate($im, 100, 100, 0));
+$T = array(array(0,-1),array(-1,0),array(1,0), imagecolorallocate($im, 0, 100, 250));
+$BLOCKS = array($I, $L, $iL, $S, $Z, $Q, $T);
 
 //initialize
 if(session_id()=="") session_start();
 if(!isset($_SESSION['x'])) $_SESSION['x']=5;
 if(!isset($_SESSION['y'])) $_SESSION['y']=0;
-if(!isset($_SESSION['block'])) $_SESSION['block']=BLOCKS[rand(0,6)];
+if(!isset($_SESSION['block'])) $_SESSION['block']=$BLOCKS[rand(0,6)];
 if(!isset($_SESSION['field'])){
 	for($i=0;$i<width;$i++){
 		for($q=0;$q<height;$q++){
@@ -75,10 +76,10 @@ if(isset($_GET['in'])){
 		$x--;			//////////////////
 		if(isNotLegal())$x++;
 	}
-	else if($in==114){
+	else if($in==48){
 		$x=5;
 		$y=0;
-		$block=BLOCKS[rand(0,6)];
+		$block=$BLOCKS[rand(0,6)];
 
 		for($i=0;$i<width;$i++){
 			for($q=0;$q<height;$q++){
@@ -158,18 +159,18 @@ if(isResting()){
 	//spawn new block
 	$y=0;
 	$x=5;
-	$block=BLOCKS[rand(0,6)];
+	$block=$BLOCKS[rand(0,6)];
 	
 	//check if game is done
-	if(isNotLegal())echo "GAME OVER";
+	if(isNotLegal())echo "Du bist GAME OVER"; //hier mit einem GAME OVER Pic ersetzen!
 }
 
 //draw graphics
 //draw game field
-$im = imageCreate((width+1)*elemSize,(height+1)*elemSize);
-$bgColor = imageColorAllocate($im,255,230,255);
+//$im = imageCreate((width+1)*elemSize,(height+1)*elemSize);
+$bgColor = imageColorAllocate($im,150,150,150);
 $gridColor = imageColorAllocate($im, 0, 0, 0);
-$blockColor = imagecolorallocate($im, 100, 100, 250);
+$blockColor = $block[3];
 imageFilledRectangle($im,0,0,(width+1)*elemSize,(height+1)*elemSize,$bgColor);
 //draw block
 imagefilledrectangle($im, $x*elemSize, $y*elemSize, ($x*elemSize)+elemSize, ($y*elemSize)+elemSize, $blockColor); //draw pivot element
