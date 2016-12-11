@@ -1,11 +1,11 @@
 <script>
 function rel(){
-	window.location = "http://localhost/4D-Tetris/Skripte/tetris.php";
+	window.location = window.location.href.split("?")[0];
 }
 setInterval(rel, 1000);
 
 function sendInput(e){
-	window.location = "http://localhost/4D-Tetris/Skripte/tetris.php"+"?in="+e.keyCode;
+	window.location = window.location.href.split("?")[0]+"?in="+e.keyCode;
 }
 window.addEventListener("keypress", sendInput, false);
 </script>
@@ -13,70 +13,36 @@ window.addEventListener("keypress", sendInput, false);
 <img src="pic.jpg" />
 
 <?php
-
-//magic numbers
-define("elemSize",30);
-define("width", 10);
-define("height", 20);
-
-//das bild
-$im = imageCreate((width+1)*elemSize,(height+1)*elemSize);
-//the blocks
-$I = array(array(0,-1),array(0,1),array(0,2), imagecolorallocate($im, 10, 100, 250));
-$L = array(array(0,-1),array(0,1),array(1,1), imagecolorallocate($im, 100, 10, 250));
-$iL = array(array(0,-1),array(0,1),array(-1,1), imagecolorallocate($im, 100, 100, 20));
-$S = array(array(1,0),array(0,1),array(-1,1), imagecolorallocate($im, 1, 100, 2));
-$Z = array(array(-1,0),array(0,1),array(1,1), imagecolorallocate($im, 100, 10, 50));
-$Q = array(array(1,0),array(0,1),array(1,1), imagecolorallocate($im, 100, 100, 0));
-$T = array(array(0,-1),array(-1,0),array(1,0), imagecolorallocate($im, 0, 100, 250));
-$BLOCKS = array($I, $L, $iL, $S, $Z, $Q, $T);
-
-//initialize
-if(session_id()=="") session_start();
-if(!isset($_SESSION['x'])) $_SESSION['x']=5;
-if(!isset($_SESSION['y'])) $_SESSION['y']=0;
-if(!isset($_SESSION['block'])) $_SESSION['block']=$BLOCKS[rand(0,6)];
-if(!isset($_SESSION['field'])){
-	for($i=0;$i<width;$i++){
-		for($q=0;$q<height;$q++){
-			$arr[$i][$q]=false;
-		}
-	}
-	$_SESSION['field']=$arr;
-}
+include 'funcs.php';
+include 'config.php';
+include 'graphics.php';
 
 //game-state relevant variables
-	//x,y,block,field,score
+	//x,y,block,field,gravity, score
+$grav = $_SESSION['gravity'];
 $x = $_SESSION['x'];
 $y = $_SESSION['y'];
 $block = $_SESSION['block'];
 $field = $_SESSION['field'];
 
 //move block
-$y++;
+if($grav==0)$y--;
+else if($grav==1)$x++;
+else if($grav==2)$y++;
+else $x--;
 
 //respond to player input
-function isNotLegal(){
-	global $x, $y, $block, $field;
-	if($x<0 or $x>=width)return true;
-	if($field[$x][$y])return true;
-	for($i=0;$i<3;$i++){
-		if($x+$block[$i][0]<0 or $x+$block[$i][0]>=width)return true;
-		if($field[$x+$block[$i][0]][$y+$block[$i][1]])return true;
-	}
-}
-
 if(isset($_GET['in'])){
 	$in = $_GET['in'];
-	if($in==100){
-		$x++;				//////////////////
+	if($in==RIGHT){
+		$x++;
 		if(isNotLegal())$x--;
 	}
-	else if($in==97){
-		$x--;			//////////////////
+	else if($in==LEFT){
+		$x--;
 		if(isNotLegal())$x++;
 	}
-	else if($in==48){
+	else if($in==STARTNEW){
 		$x=5;
 		$y=0;
 		$block=$BLOCKS[rand(0,6)];
@@ -87,53 +53,25 @@ if(isset($_GET['in'])){
 			}
 		}
 		$field=$arr;
-	}								//////////////////
-	else if($in==115){
+	}
+	else if($in==ROTRIGHT){
 		rotRight();
 		if(isNotLegal())rotLeft();
 	}
-	else if($in==119){
+	else if($in==ROTLEFT){
 		rotLeft();
 		if(isNotLegal())rotRight();
 	}
 }
 
-function rotRight(){
-	global $block;
-	for($i=0;$i<3;$i++){
-		$tmp = $block[$i][0];
-		$block[$i][0]=-$block[$i][1];
-		$block[$i][1]=$tmp;
-	}
-}
-
-function rotLeft(){
-	global $block;
-	for($i=0;$i<3;$i++){
-		$tmp=$block[$i][0];
-		$block[$i][0]=$block[$i][1];
-		$block[$i][1]=-$tmp;
-	}
-}
-
 //check if block is lying on something
-function isResting(){
-	global $field, $x, $y, $block;
-	
-	if($y>=height-1) return true;
-	if($field[$x][$y+1]) return true;
-	for($i=0;$i<3;$i++){
-		if($y+$block[$i][1]>=height-1) return true;
-		if($field[$x+$block[$i][0]][$y+$block[$i][1]+1]) return true;
-	}
-	return false;
-}
-
 if(isResting()){
 	//make block part of field
-	$field[$x][$y]=true;
+	$field[$x][$y][0]=true;
+	$field[$x][$y][1]=$block[3];
 	for($i=0;$i<3;$i++){
-		$field[$x+$block[$i][0]][$y+$block[$i][1]]=true;
+		$field[$x+$block[$i][0]][$y+$block[$i][1]][0]=true;
+		$field[$x+$block[$i][0]][$y+$block[$i][1]][1]=$block[3];
 	}
 	
 	//remove full rows
@@ -141,59 +79,33 @@ if(isResting()){
 		//check if row is full
 		$full=true;//reset
 		for($i=0;$i<width;$i++){
-			$full = $full && $field[$i][$q];
+			$full = $full && $field[$i][$q][0];
 		}
 		//remove full row, ie slide everything above full row down 1
 		if($full){
 			for($h=$q;$h>0;$h--){
 				for($i=0;$i<width;$i++){
-					$field[$i][$h]=$field[$i][$h-1];
+					$field[$i][$h][0]=$field[$i][$h-1][0];
+					if(isset($field[$i][$h-1][1])) $field[$i][$h][1]=$field[$i][$h-1][1];
 				}
 			}
 			//empty uppermost row
 			for($i=0;$i<width;$i++)
-				$field[$i][0]=false;
+				$field[$i][0][0]=false;
 		}
 	}
 
 	//spawn new block
-	$y=0;
-	$x=5;
+	$y=spawnY;
+	$x=spawnX;
 	$block=$BLOCKS[rand(0,6)];
 	
 	//check if game is done
-	if(isNotLegal())echo "Du bist GAME OVER"; //hier mit einem GAME OVER Pic ersetzen!
+	if(isNotLegal())echo "GAME OVER";
 }
 
 //draw graphics
-//draw game field
-//$im = imageCreate((width+1)*elemSize,(height+1)*elemSize);
-$bgColor = imageColorAllocate($im,150,150,150);
-$gridColor = imageColorAllocate($im, 0, 0, 0);
-$blockColor = $block[3];
-imageFilledRectangle($im,0,0,(width+1)*elemSize,(height+1)*elemSize,$bgColor);
-//draw block
-imagefilledrectangle($im, $x*elemSize, $y*elemSize, ($x*elemSize)+elemSize, ($y*elemSize)+elemSize, $blockColor); //draw pivot element
-for($i = 0; $i < 3; $i++){
-	$elemX = ($x*elemSize)+(elemSize*$block[$i][0]);
-	$elemY = ($y*elemSize)+(elemSize*$block[$i][1]);
-	imagefilledrectangle($im, $elemX, $elemY, $elemX+elemSize, $elemY+elemSize, $blockColor);
-}
-//draw field
-for($i=0;$i<width;$i++){
-	for($q=0;$q<height;$q++){
-		if($field[$i][$q]){
-			imagefilledrectangle($im, $i*elemSize, $q*elemSize, ($i*elemSize)+elemSize, ($q*elemSize)+elemSize, $blockColor);
-		}
-	}		
-}
-//draw grid
-for($i=0;$i<=width*elemSize;$i+=elemSize)
-	imageline($im, $i, 0, $i, height*elemSize, $gridColor);
-for($i=0;$i<=height*elemSize;$i+=elemSize)
-	imageline($im, 0, $i, width*elemSize, $i, $gridColor);
-//make image
-imagejpeg($im, "pic.jpg", 100);
+draw();
 
 //update $_SESSION game-state variables
 $_SESSION['x'] = $x;
@@ -202,20 +114,3 @@ $_SESSION['block'] = $block;
 $_SESSION['field'] = $field;
 
 ?>
-<!-- TODO: split into more files, is session started each time? -->
-
-<!--
-====================================
-=== Feedback Alpers, 2016-06-015 ===
-====================================
-
-Bitte beachten Sie, dass bei den Projekten in diesem Semester kein JavaScript zugelassen ist.
-
-Außerdem wirkt es so, als wenn Sie mit PHP strukturelle Elemente erzeugen. Das soll aber in HTML passieren. Einzige Ausnahme sind Fälle wie beispielsweise Tabellen, in denen Sie anhand einer verschachtelten Schleife die Zellen der Tabelle leicht generieren können. Aber auch in diesem Fällen sollen HTML-Container (z.B. <td>) ins HTML-Dokument eingefügt werden.
-
-PHP soll dagegen nur dafür verwendet werden, um (neben der eigentlichen Funktionalität des Programms) die strukturellen Elemente zu ändern.
-
-Der Sinn besteht darin, dass Sie zeigen, dass Sie im Stande sind, mit den einfachen Mitteln, die wir in der Veranstaltung besprochen haben ein Programm umzusetzen. Denn später werden Sie immer wieder in Situationen kommen, in denen ein Framework Ihnen nicht das bietet, was Sie haben wollen. Und dann müssen Sie eine eigene Lösung für Ihr Problem entwickeln.
-
-Außerdem sollen Sie klar zwischen strukturellen Elemente und dynamischer Änderung dieser Elemente im Code unterscheiden. Hier geht es um die Fähigkeit, systematisch zwischen unterschiedlichen Aufgabenbereichen zu unterscheiden.
--->
