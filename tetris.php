@@ -1,9 +1,4 @@
 <script>
-function rel(){
-	window.location = window.location.href.split("?")[0];
-}
-setInterval(rel, 1000);
-
 function sendInput(e){
 	window.location = window.location.href.split("?")[0]+"?in="+e.keyCode;
 }
@@ -45,6 +40,8 @@ if(isset($_GET['in'])){
 }
 
 if(!$gameOver){
+	header("Refresh:1; url=".explode("?","http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]")[0]);
+	
 	if($grav==0)$y--;
 	else if($grav==1)$x++;
 	else if($grav==2)$y++;
