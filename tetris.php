@@ -1,11 +1,11 @@
 <script>
 function rel(){
-	window.location = "http://localhost/4D-Tetris/Skripte/tetris.php";
+	window.location = "http://localhost/4D-Tetris/tetris.php";
 }
 setInterval(rel, 1000);
 
 function sendInput(e){
-	window.location = "http://localhost/4D-Tetris/Skripte/tetris.php"+"?in="+e.keyCode;
+	window.location = "http://localhost/4D-Tetris/tetris.php"+"?in="+e.keyCode;
 }
 window.addEventListener("keypress", sendInput, false);
 </script>
