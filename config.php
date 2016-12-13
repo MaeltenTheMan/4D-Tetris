@@ -26,6 +26,7 @@ $BLOCKS = array($I, $L, $iL, $S, $Z, $Q, $T);
 
 //initialize
 if(session_id()=="") session_start();
+if(!isset($_SESSION['gameOver'])) $_SESSION['gameOver']=false;
 if(!isset($_SESSION['gravity'])) $_SESSION['gravity']=2;
 if(!isset($_SESSION['x'])) $_SESSION['x']=spawnX;
 if(!isset($_SESSION['y'])) $_SESSION['y']=spawnY;

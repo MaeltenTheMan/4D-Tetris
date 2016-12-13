@@ -1,7 +1,7 @@
 <?php
 function draw(){
-	global $im, $block, $x, $y, $field;
-	
+	global $im, $block, $x, $y, $field, $gameOver;
+		
 	//draw game field
 	$bgColor = imageColorAllocate($im,255,230,255);
 	$gridColor = imageColorAllocate($im, 0, 0, 0);
@@ -27,6 +27,16 @@ function draw(){
 		imageline($im, $i, 0, $i, height*elemSize, $gridColor);
 	for($i=0;$i<=height*elemSize;$i+=elemSize)
 		imageline($im, 0, $i, width*elemSize, $i, $gridColor);
+	
+	//game Over screen modifications
+	if($gameOver){
+		$textColor = ImageColorAllocate ($im, 255, 255, 255);
+		$rightMargin = 10;
+		imagefilter($im, IMG_FILTER_BRIGHTNESS, -200);
+		imagefilter($im, IMG_FILTER_GRAYSCALE);
+		imagettftext($im , 40 , 0 , $rightMargin , height*elemSize/2 , $textColor , "Font.ttf" , "DU BIST GAME OVERRRR");
+	}
+	
 	//make image
 	imagejpeg($im, "pic.jpg", 100);
 }
