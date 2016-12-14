@@ -1,0 +1,79 @@
+body{
+	font-family: helvetica, arial, sans-serif;
+	margin: 0 0 0 0;
+	background: #c0c0c0;
+}
+
+
+
+header{
+	padding: 20px;
+	text-align: center;
+	color: #0f0f0f;
+	background-color: #c0c0c0;
+	
+	
+}
+nav{
+	float:left;
+	width: 100%;
+	background-color: #0c0c0c;
+	margin: 0;
+	overflow: hidden;
+/*	padding: 10px*/
+}
+nav ul li{
+	list-style-type: none;
+	display: inline; /*macht, dass die einzelnen listenteile als blöcke angegeben werden*/
+	overflow: hidden;
+}
+nav li a{
+	display: inline-block; /*diese zeile löst das problem mit den fest scalierenden blöcken, zusätzlich zu min-widht*/
+	min-width: 120px;
+	text-align: left;
+	text-decoration:none;
+	color: #ffffff;
+	border-right: 1px solid #ffffff;
+	transition: background 0.5s ease;
+	
+}
+/*nav li:last-child a{
+	border: none;
+}*/
+nav li a: hover, nav li.active a{
+	color: #000000;
+	background: #dadada;
+}
+
+
+.wilkommensbild{
+	width: 100%
+	
+}
+.wilkommensbild img{
+	width: 100%!important;
+	height: auto;
+}
+/*
+#content {
+	display: inline-block;
+	width: 28%;
+	min-width: 250px;
+	margin: 0 2%;
+	text-align: left;
+	
+}
+*/
+footer{
+	clear:left;
+	background-color: #c0c0c0;
+	text-align:center;
+	padding: 10px;
+	
+}
+
+
+
+
+
+

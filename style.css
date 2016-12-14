@@ -1,11 +1,12 @@
 *{
+	
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 }
 
 body {
-	background: #FFFFFF;
+	background: #eda000;
 	padding: 2%;
 	font-family : "Helvetica", "Arial", Tahoma;
 	font-Size: 22px;
