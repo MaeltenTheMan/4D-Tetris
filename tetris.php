@@ -1,11 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<html>
+<head>
+        <title>4D-Tetris</title>
+        <meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="final.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+	 <header>
+				<h1>Hier wird gespielt</h1> <!--hier kann man gegebenenfalls ein Logo erstellen -->
+        </header> 
+		<nav>
+			<ul>
+				<li><a href='index.html'>Wilkommen</a></li>
+				<li class='active'><li><a href='#'>Game</a></li>
+				<li><a href='tetris.php'>Regeln</a></li>
+				<li><a href='Dokumentation.html'>Dokumentation</a></li>
+			</ul>
 <script>
 function sendInput(e){
 	window.location = window.location.href.split("?")[0]+"?in="+e.keyCode;
 }
 window.addEventListener("keypress", sendInput, false);
 </script>
+<div class="tetrispic">				
+			<img src="pic.jpg" />
+		</div>
 
-<img src="pic.jpg" />
 
 <?php
 
@@ -120,3 +143,5 @@ if(!$gameOver){
 }
 	
 ?>
+</body>
+</html>

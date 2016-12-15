@@ -1,71 +1,73 @@
-body{
-	font-family: helvetica, arial, sans-serif;
-	margin: 0 0 0 0;
-	background: #0c0c0c;
+*{ /*der universale, magrin 0 und padding 0, lässt alle lücken füllen!*/
+	margin:0;
+	padding:0;
 }
-
-
+html, body{
+	/*height; 100%;*/
+	font-family: helvetica, arial, sans-serif;
+	background: #0c0c0c;	
+}
 
 header{
-	padding: 20px;
-	text-align: center;
-	color: #0f0f0f;
+	font-weight:bolder;
+	font-size:large;
+	padding: 1%;
+	text-align: left;
+	color: #000000;
 	background-color: #c0c0c0;
-	
-	
 }
 nav{
-	float:left;
 	width: 100%;
 	background-color: #0c0c0c;
-	margin: 0;
-	overflow: hidden;
-/*	padding: 10px*/
+	padding: 5px 5px 10px 10px;
 }
 nav ul li{
-	list-style-type: none;
-	display: inline; /*macht, dass die einzelnen listenteile als blöcke angegeben werden*/
-	overflow: hidden;
+	display:inline-block; /*macht, dass die einzelnen listenteile als blöcke angegeben werden*/
+	
+	display: left;
 }
-nav li a{
+nav li a{ /*hiermit spreche ich die einzelnen schriften der blöcke an*/
 	display: inline-block; /*diese zeile löst das problem mit den fest scalierenden blöcken, zusätzlich zu min-widht*/
 	min-width: 120px;
-	text-align: left;
+	font-weight: bolder;
 	text-decoration:none;
 	color: #ffffff;
-	border-right: 1px solid #ffffff;
+	/*border-right: 1px solid #ffffff;*/
 	transition: background 0.5s ease;
-	
+	padding: 0px;
 }
-/*nav li:last-child a{
-	border: none;
-}*/
+
 nav li a:hover, nav li.active a{
-	color: #f7fe2e;
-
+	color: #fe0000;
 }
-
-
-.wilkommensbild{
+.willkommensbild{
 	width: 100%;
 	text-align: center;
 	
 }
-.wilkommensbild img{
-	width: 100%!important;
+.willkommensbild img{
+	width: 90%!important;
 	height: auto;
+	margin-bottom: 2.8%;
 }
-
+.tetrispic{
+	height: 100%;
+	text-align: center;
+	
+	
+}
+.tetrispic img{
+	height: 100%!important;
+	width: auto;
+	margin-bottom: 100px;
+}
 footer{
+	position:absolute;
+	width:100%;
+	color: #000000;
 	clear:left;
 	background-color: #c0c0c0;
 	text-align:left;
 	padding: 11px;
-	
+	bottom: 0px;
 }
-
-
-
-
-
-
