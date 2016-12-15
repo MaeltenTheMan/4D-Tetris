@@ -3,9 +3,10 @@
 	padding:0;
 }
 html, body{
-	/*height; 100%;*/
+	
 	font-family: helvetica, arial, sans-serif;
-	background: #0c0c0c;	
+	background: #c0c0c0;	
+	
 }
 
 header{
@@ -44,30 +45,21 @@ nav li a:hover, nav li.active a{
 	width: 100%;
 	text-align: center;
 	
+	
 }
 .willkommensbild img{
 	width: 90%!important;
 	height: auto;
-	margin-bottom: 2.8%;
+	
 }
+
 .tetrispic{
 	height: 100%;
 	text-align: center;
-	
-	
 }
 .tetrispic img{
 	height: 100%!important;
 	width: auto;
 	margin-bottom: 100px;
 }
-footer{
-	position:absolute;
-	width:100%;
-	color: #000000;
-	clear:left;
-	background-color: #c0c0c0;
-	text-align:left;
-	padding: 11px;
-	bottom: 0px;
-}
+

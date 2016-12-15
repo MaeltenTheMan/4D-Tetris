@@ -15,9 +15,9 @@
 		<nav>
 			<ul>
 				<li><a href='index.html'>Wilkommen</a></li>
-				<li class='active'><li><a href='#'>Game</a></li>
-				<li><a href='tetris.php'>Regeln</a></li>
-				<li><a href='Dokumentation.html'>Dokumentation</a></li>
+				<li><li><a href=''>Game</a></li>
+				<li><a href='regeln.html'>Regeln</a></li>
+				<li><a href='dokumentation.html'>Dokumentation</a></li>
 			</ul>
 <script>
 function sendInput(e){
