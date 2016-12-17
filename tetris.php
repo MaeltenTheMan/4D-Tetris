@@ -44,14 +44,16 @@ $x = $_SESSION['x'];
 $y = $_SESSION['y'];
 $block = $_SESSION['block'];
 $field = $_SESSION['field'];
+$score = $_SESSION['score'];
 
-//move block
+//check for reset
 if(isset($_GET['in'])){
 	if($_GET['in']==STARTNEW){
 		$gameOver = false;
 		$x=5;
 		$y=0;
 		$block=$BLOCKS[rand(0,6)];
+		$score = 0;
 	
 		for($i=0;$i<width;$i++){
 			for($q=0;$q<height;$q++){
@@ -65,6 +67,7 @@ if(isset($_GET['in'])){
 if(!$gameOver){
 	header("Refresh:1; url=".explode("?","http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]")[0]);
 	
+	//move block
 	if($grav==0)$y--;
 	else if($grav==1)$x++;
 	else if($grav==2)$y++;
@@ -101,7 +104,8 @@ if(!$gameOver){
 			$field[$x+$block[$i][0]][$y+$block[$i][1]][1]=$block[3];
 		}
 		
-		//remove full rows
+		//remove full rows & count score
+		$rowRemoveCount = 0;
 		for($q=0;$q<height;$q++){
 			//check if row is full
 			$full=true;//reset
@@ -110,6 +114,7 @@ if(!$gameOver){
 			}
 			//remove full row, ie slide everything above full row down 1
 			if($full){
+				$rowRemoveCount++;
 				for($h=$q;$h>0;$h--){
 					for($i=0;$i<width;$i++){
 						$field[$i][$h][0]=$field[$i][$h-1][0];
@@ -121,6 +126,7 @@ if(!$gameOver){
 					$field[$i][0][0]=false;
 			}
 		}
+		$score += floor(pow(2,$rowRemoveCount-1));
 	
 		//spawn new block
 		$y=spawnY;
@@ -140,6 +146,7 @@ if(!$gameOver){
 	$_SESSION['y'] = $y;
 	$_SESSION['block'] = $block;
 	$_SESSION['field'] = $field;
+	$_SESSION['score'] = $score;
 }
 	
 ?>

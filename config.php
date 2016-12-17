@@ -13,7 +13,7 @@ define("ROTRIGHT", '119');
 define("ROTLEFT", '115');
 
 //the blocks
-$im = imageCreate((width+1)*elemSize,(height+1)*elemSize);
+$im = imageCreate((width+2)*elemSize,(height+2)*elemSize);
 $I = array(array(0,-1),array(0,1),array(0,2),imagecolorallocate($im, 255, 20, 12));
 $L = array(array(0,-1),array(0,1),array(1,1),imagecolorallocate($im, 1, 255, 1));
 $iL = array(array(0,-1),array(0,1),array(-1,1),imagecolorallocate($im, 10, 0, 255));
@@ -23,6 +23,10 @@ $Q = array(array(1,0),array(0,1),array(1,1),imagecolorallocate($im, 10, 209, 255
 $T = array(array(0,-1),array(-1,0),array(1,0),imagecolorallocate($im, 210, 100, 200));
  
 $BLOCKS = array($I, $L, $iL, $S, $Z, $Q, $T);
+
+//color palette
+$deathTextColor = ImageColorAllocate ($im, 255, 255, 255);
+$scoreTextColor = ImageColorAllocate ($im, 0, 0, 0);
 
 //initialize
 if(session_id()=="") session_start();
@@ -40,4 +44,5 @@ if(!isset($_SESSION['field'])){
 	}
 	$_SESSION['field']=$arr;
 }
+if(!isset($_SESSION['score'])) $_SESSION['score'] = 0;
 ?>
