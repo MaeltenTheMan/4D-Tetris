@@ -9,8 +9,8 @@ define("spawnY", 2);
 define("RIGHT", '100');
 define("LEFT", '97');
 define("STARTNEW", '48');
-define("ROTRIGHT", '119');
-define("ROTLEFT", '115');
+define("ROTRIGHT", '108');
+define("ROTLEFT", '107');
 
 //the blocks
 $im = imageCreate((width+2)*elemSize,(height+2)*elemSize);

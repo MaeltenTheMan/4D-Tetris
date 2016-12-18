@@ -32,7 +32,7 @@ window.addEventListener("keypress", sendInput, false);
 
 <?php
 
-include 'funcs.php';
+include 'functions.php';
 include 'config.php';
 include 'graphics.php';
 

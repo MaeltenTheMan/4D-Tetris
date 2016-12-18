@@ -16,8 +16,8 @@ function draw(){
 		imagefilledrectangle($im, $elemX, $elemY, $elemX+elemSize, $elemY+elemSize, $blockColor);
 	}
 	//draw field
-	for($i=0;$i<=width;$i++){
-		for($q=0;$q<=height;$q++){
+	for($i=0;$i<width;$i++){
+		for($q=0;$q<height;$q++){
 			if($field[$i][$q][0]){
 				imagefilledrectangle($im, ($i+1)*elemSize, ($q+1)*elemSize, ($i+2)*elemSize, ($q+2)*elemSize, $field[$i][$q][1]);
 			}
@@ -34,10 +34,9 @@ function draw(){
 	
 	//game Over screen modifications
 	if($gameOver){
-		$rightMargin = 10;
 		imagefilter($im, IMG_FILTER_BRIGHTNESS, -150);
 		imagefilter($im, IMG_FILTER_GRAYSCALE);
-		imagettftext($im , 40 , 0 , $rightMargin , height*elemSize/2 , $deathTextColor , "Font.ttf" , "DU BIST GAME OVERRRR");
+		imagettftext($im , 40 , 0 , 30 , height*elemSize/2 , $deathTextColor , "Font.ttf" , "DU BIST GAME OVERRRR");
 	}
 	
 	//make image

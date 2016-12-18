@@ -8,6 +8,7 @@ function isNotLegal(){
 		if($x+$block[$i][0]<0 or $x+$block[$i][0]>=width)return true;
 		if($field[$x+$block[$i][0]][$y+$block[$i][1]][0])return true;
 	}
+	return false;
 }
 
 function isResting(){
