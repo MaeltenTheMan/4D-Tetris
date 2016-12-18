@@ -36,7 +36,7 @@ function draw(){
 	if($gameOver){
 		imagefilter($im, IMG_FILTER_BRIGHTNESS, -150);
 		imagefilter($im, IMG_FILTER_GRAYSCALE);
-		imagettftext($im , 40 , 0 , 30 , height*elemSize/2 , $deathTextColor , "Font.ttf" , "DU BIST GAME OVERRRR");
+		imagettftext($im , 40 , 0 , 30 , (height+2)*elemSize/2 , $deathTextColor , "Font.ttf" , "DU BIST GAME OVERRRR");
 	}
 	
 	//make image
