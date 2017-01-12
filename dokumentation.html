@@ -12,7 +12,7 @@
     <body>
 		
 			<header>
-					<h1>Willkommen zu 4D-Tetris</h1> <!--hier kann man gegebenenfalls ein Logo erstellen -->
+					<h1>Dokumentation</h1> <!--hier kann man gegebenenfalls ein Logo erstellen -->
 			</header> 
 			 
 			<nav>
@@ -23,8 +23,15 @@
 					<li class='active'><li><a href='dokumentation.html'>Dokumentation</a></li>
 				</ul>
 			</nav>
-			<div class="dokumentation">				
-				
+			<div class="dokumentation">	
+				<h1>“4D-Tetris” (Projekt A)</h1>
+				<p>Felix Malsch und Malte Gruntzdorff</p>
+				<h2>Aufgaben der Software</h2>
+				<p>Es ist eine Website geplant, bei der die Nutzer aktiv an einer Tetrisvariante teilnehmen können. Diese unterscheidet sich jedoch maßgeblich vom herkömmlichen Tetrisspiel. Denn das Spielfeld ist in fünf Bereiche unterteilt. In der Mitte ist ein Quadrat, in der die Spielblöcke erscheinen. An jeder Seite des Quadrats ist ein herkömmliches “Tetrisspielfeld” gelegen. Die Spielsteine bewegen sich nach dem Erscheinen zufällig in Richtung eines der anliegenden Spielfelder, in welchen die bekannten Tetrisregeln greifen. Der Nutzer spielt somit vier Tetrispartien gleichzeitig. Ist jedoch das Spiel in einem der Bereiche verloren, ist die gesamte Partie zu Ende. Als zusätzliche Spielmodi wäre noch eine Zweispielervariante denkbar, in der ein weiterer Spieler die Richtung der Spielsteine sowie eine Rotation der anliegenden Spielfelder steuern kann.</p>
+				<h2>Systemarchitektur</h2>
+				<p>Die Anwendung bedient sich einer Client-Server Architektur. Der Client dient ausschließlich der Darstellung des Spielzustandes und der Übertragung von Tasteneingaben, was durch Javascript Code, der die Tasteneingaben erfasst und per Query String an den Server schickt, erfolgt. Sämtliche spielmechanische Tätigkeiten finden serverseitig statt und sind in PHP implementiert. Auch die Grafik wird serverseitig generiert und als JPEG-Bild an den Client gesendet. Die dadurch erstellten JPEG-Bilder sind in HTML- und CSS-Code eingebettet. Es wurde auf eine responsive Darstellung der Seite geachtet.Der Code ist auf die Dateien tetris.php, graphics.php, functions.php und config.php sowie index.html, game.html und final.css aufgeteilt. In tetris.php ist der Spielablauf festgelegt: Hier “spawnt” und fällt ein zufälliger Tetris-Block, dreht und verschiebt sich, je nach den vom Client übermittelten Tasteneingaben, sofern die Bewegung im Rahmen der Spielregeln ist. Der Block kann sich absetzen, was zur Folge hat dass volle Reihen ermittelt und entfernt werden, und der Punktestand je nach Anzahl der entfernten Reihen aktualisiert wird.Für Operationen und Fragestellungen, die in tetris.php immer wieder ausgeführt, bzw. beantwortet werden müssen, sind Funktionen, die in der Datei functions.php implementiert wurden, zuständig. Hierbei sind die Operationen die zwei möglichen Rotationen des aktiven Tetris-Blocks. Wiederkehrende Fragestellungen sind, ob ein gegebener Spielzustand den Regel konform ist, und ob der aktive Block zur Ruhe gekommen ist.Die Datei graphics.php beinhaltet den Code, der das den Spielzustand darstellende Bild erzeugt. Sämtliche, mehr oder weniger willkürliche, Festlegungen sind in der Datei config.php eingestellt. Dies beinhaltet die Größe des Spielfeldes, die Auflösung der Darstellung, die Steuerung, die Textfarben und Farben der einzelnen Tetrisblöcke und die Spawnposition eines neuen Blockes. Allerdings sind auch grundlegendere Dinge, wie die Form der Blöcke oder der Zustand eines neuen Spielfeldes hier festgelegt.</p>
+				<h2>Fazit</h2>
+				<p>Es ist uns gelungen ein voll funktionsfähiges Tetrisspiel in eine Website einzubauen. Die Einbindung der Zusatzspielfelder, sowie des „Zweispielermodus“ ist uns im Rahmen von „Projekt A“ leider zeitlich nicht möglich gewesen.Wir haben uns nach dem letzten Feedbackgespräch mit der Einbettung in HTML und dementsprechend mit der responsiven Darstellung des Spieles beschäftigt. Zusätzlich haben wir die Spielsteine in unterschiedlichen Farben eingefärbt, sowie einen aktuellen Spielerscore eingefügt.</p>
 			</div>
 			
 		

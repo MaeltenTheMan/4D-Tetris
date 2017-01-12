@@ -54,12 +54,13 @@ nav li a:hover, nav li.active a{
 }
 
 .tetrispic{
-	height: 100%;
+	width: 50%;
 	text-align: center;
 }
 .tetrispic img{
 	height: 100%!important;
-	width: auto;
-	margin-bottom: 100px;
+	width: 50%!important;
+	
+	
 }
 
